@@ -1,0 +1,15 @@
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+
+    Note right of browser: Pyyntö kohdistuu osoitteeseen new_note_spa, 
+    Note right of browser: on tyypiltään POST ja se sisältää JSON-muodossa olevan uuden muistiinpanon.
+    
+    server-->>browser: [{ "content": "pool", "date": "2025-06-09" }, ... ]
+    deactivate server
+
+    Note right of browser: Palvelin vastaa kyselyyn statuskoodilla 201 created. Tällä kertaa palvelin ei pyydä uudelleenohjausta 
+    Note right of browser: kuten aiemmassa versiossamme. Single Page App (SPA) ei tee turhia sivunlatauksia.
