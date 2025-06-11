@@ -1,0 +1,38 @@
+sequenceDiagram 
+    participant browser 
+    participant server
+    
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+    
+    Note right of browser: When the form button is pressed, the browser POSTs the data entered into the form to the server.
+    Note right of browser:The server responds to the request with HTTP status code 302 (HTML document)
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
+    activate server
+    server-->>browser: HTML document
+    deactivate server
+    
+    Note right of browser:  Above HTTP status code 302 means so-called redirect request, which the server uses
+    Note right of browser: to prompt the browser to automatically make a new HTTP GET request to the location: /notes.
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.css
+    activate server
+    server-->>browser: 1) the CSS file
+    deactivate server
+    
+    Note right of browser: Page loading also triggers three (1,2,3) other HTTP requests and loading of those three files.
+    
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/main.js
+    activate server
+    server-->>browser: 2) the JavaScript file
+    deactivate server
+
+    browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/data.json
+    activate server
+    server-->>browser: 3) the JSON file
+    deactivate server
+    
+    Note right of browser:The message and timestamp which i created was JSON file --> (content": "clear","date": "2025-06-09)
