@@ -1,5 +1,5 @@
 # Full-Stack-Open
-#### Helsingin yliopiston Full Stack Open-kurssin tehtävien palautuksia.
+### Helsingin yliopiston Full Stack Open-kurssin tehtävien palautuksia.
 
 ###### Palautukset eivät sisällä kansiota node_modules, joka vei paljon tilaa..
 ###### ja kurssin ohjeissa lukee: "Kunkin tehtäväsarjan ohjelmasta kannattaa palauttaa 
