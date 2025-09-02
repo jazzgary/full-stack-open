@@ -1,0 +1,5 @@
+/* kiinteät sarakeleveydet (numerot ovat toiselta sivulta nätisti linjassa.) */
+table {
+	table-layout: fixed;
+	width: 150px;
+}
